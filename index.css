@@ -1,0 +1,17 @@
+.vc-devtools-btn {
+    color: var(--interactive-normal);
+    transition: color 0.2s ease;
+}
+
+.vc-devtools-btn:hover {
+    color: var(--interactive-hover);
+}
+
+.vc-devtools-btn[aria-selected="true"] {
+    color: var(--interactive-active);
+}
+
+.vc-devtools-btn svg {
+    width: 20px;
+    height: 20px;
+}
