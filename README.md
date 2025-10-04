@@ -15,11 +15,13 @@ The plugin:
 
 1. **Patches Discord's header bar** - Uses the same injection point as VencordToolbox
 2. **Multiple DevTools opening methods**:
-   - First tries `DiscordNative.window.toggleDevTools()`
-   - Falls back to `window.webContents.openDevTools()`
-   - Finally uses keyboard shortcut simulation (Ctrl+Alt+O)
+    - First tries `DiscordNative.window.toggleDevTools()`
+    - Falls back to `window.webContents.openDevTools()`
+    - Tries Electron's remote module
+    - Uses debugger statement to trigger DevTools
+    - Finally uses keyboard shortcut simulation (Ctrl+Alt+O)
 3. **Visual feedback** - Shows selected state when DevTools are open
-4. **Tooltip** - Displays "Open DevTools (Ctrl+Alt+O)" on hover
+4. **Tooltip** - Displays "Open DevTools (multiple fallback methods)" on hover
 
 ## Installation
 
