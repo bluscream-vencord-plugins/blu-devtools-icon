@@ -50,4 +50,4 @@ Simply click the DevTools icon in the top navigation bar (next to the inbox icon
 
 ## Author
 
-Created by Bluscream
+Created by **Bluscream** 🎯
