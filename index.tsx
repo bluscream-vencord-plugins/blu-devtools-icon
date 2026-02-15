@@ -1,8 +1,9 @@
-/*
- * Vencord, a Discord client mod
- * Copyright (c) 2024 Vendicated and contributors
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
+export const pluginInfo = {
+    id: "devToolsIcon",
+    name: "DevTools Icon",
+    description: "Adds a DevTools icon next to the inbox icon in the top navigation",
+    color: "#7289da"
+};
 
 import "./index.css";
 
@@ -101,12 +102,10 @@ function DevToolsButton({ buttonClass }: { buttonClass: string }) {
 
 import { Logger } from "@utils/Logger";
 
-const pluginId = "devtoolsIcon";
-const pluginName = "DevTools Icon";
-const logger = new Logger(pluginName, "#7289da");
+const logger = new Logger(pluginInfo.name, pluginInfo.color);
 
 export default definePlugin({
-    name: pluginName,
+    name: "DevTools Icon",
     description:
         "Adds a DevTools icon next to the inbox icon in the top navigation",
     authors: [
