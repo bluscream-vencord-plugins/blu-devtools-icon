@@ -31,11 +31,11 @@ function DevToolsButton({ buttonClass }: { buttonClass: string }) {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDevTools = () => {
-        console.log("DevTools button clicked - attempting to open DevTools...");
+        logger.log("DevTools button clicked - attempting to open DevTools...");
         try {
             // Method 1: Try DiscordNative.window.toggleDevTools (Discord's native method)
             if (window.DiscordNative?.window?.toggleDevTools) {
-                console.log("Using DiscordNative.window.toggleDevTools()");
+                logger.log("Using DiscordNative.window.toggleDevTools()");
                 window.DiscordNative.window.toggleDevTools();
                 setIsOpen(!isOpen);
                 return;
@@ -43,7 +43,7 @@ function DevToolsButton({ buttonClass }: { buttonClass: string }) {
 
             // Method 2: Try webContents.openDevTools (Electron API)
             if (window.webContents?.openDevTools) {
-                console.log("Using window.webContents.openDevTools()");
+                logger.log("Using window.webContents.openDevTools()");
                 window.webContents.openDevTools();
                 setIsOpen(!isOpen);
                 return;
@@ -64,7 +64,7 @@ function DevToolsButton({ buttonClass }: { buttonClass: string }) {
             }
 
             // Method 4: Use debugger statement to trigger DevTools
-            console.log("Opening DevTools via debugger statement...");
+            logger.log("Opening DevTools via debugger statement...");
             debugger;
             setIsOpen(!isOpen);
 
@@ -80,9 +80,9 @@ function DevToolsButton({ buttonClass }: { buttonClass: string }) {
                 document.dispatchEvent(event);
             }, 100);
         } catch (error) {
-            console.error("Failed to open DevTools:", error);
+            logger.error("Failed to open DevTools:", error);
             // Last resort: just use debugger
-            console.log("Using debugger as final fallback...");
+            logger.log("Using debugger as final fallback...");
             debugger;
         }
     };
@@ -99,8 +99,14 @@ function DevToolsButton({ buttonClass }: { buttonClass: string }) {
     );
 }
 
+import { Logger } from "@utils/Logger";
+
+const pluginId = "devtoolsIcon";
+const pluginName = "DevTools Icon";
+const logger = new Logger(pluginName, "#7289da");
+
 export default definePlugin({
-    name: "Blu DevTools Icon",
+    name: pluginName,
     description:
         "Adds a DevTools icon next to the inbox icon in the top navigation",
     authors: [

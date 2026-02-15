@@ -1,25 +1,8 @@
 {
-    "name": "blu-devtools-icon",
+    "name": "devtoolsIcon",
     "version": "1.0.0",
-    "description": "Adds a DevTools icon next to the inbox icon in the top navigation",
+    "description": "DevTools Icon",
     "main": "index.tsx",
-    "scripts": {
-        "build": "echo 'No build step required for Vencord user plugins'",
-        "test": "echo 'No tests specified'",
-        "lint": "echo 'Linting would go here'"
-    },
-    "keywords": [
-        "vencord",
-        "discord",
-        "devtools",
-        "developer",
-        "tools",
-        "icon",
-        "plugin",
-        "userplugin",
-        "navigation",
-        "header"
-    ],
     "author": {
         "name": "Bluscream",
         "url": "https://github.com/Bluscream"
@@ -27,23 +10,10 @@
     "license": "GPL-3.0-or-later",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Bluscream/vencord-plugins.git"
+        "url": "https://github.com/bluscream-vencord-plugins/blu-devtools-icon.git"
     },
-    "bugs": {
-        "url": "https://github.com/Bluscream/vencord-plugins/issues"
-    },
-    "homepage": "https://github.com/Bluscream/vencord-plugins#readme",
     "vencord": {
         "plugin": true,
         "userPlugin": true
-    },
-    "engines": {
-        "node": ">=16.0.0"
-    },
-    "files": [
-        "index.tsx",
-        "index.css",
-        "README.md",
-        "package.json"
-    ]
+    }
 }
