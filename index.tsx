@@ -8,18 +8,8 @@ import ErrorBoundary from "@components/ErrorBoundary";
 import { Logger } from "@utils/Logger";
 // endregion Imports
 
-// region PluginInfo
-export const pluginInfo = {
-    id: "devToolsIcon",
-    name: "DevToolsIcon",
-    description: "Adds a DevTools icon to the top navigation bar for quick access",
-    color: "#7289da",
-    authors: [
-        { name: "Bluscream", id: 467777925790564352n },
-        { name: "Assistant", id: 0n }
-    ],
-};
-// endregion PluginInfo
+import { pluginInfo } from "./info";
+export { pluginInfo };
 
 // region Variables
 const logger = new Logger(pluginInfo.id, pluginInfo.color);
