@@ -1,23 +1,36 @@
-export const pluginInfo = {
-    id: "devToolsIcon",
-    name: "DevTools Icon",
-    description: "Adds a DevTools icon next to the inbox icon in the top navigation",
-    color: "#7289da"
-};
-
+//// Plugin originally written for Equicord at 2026-02-16 by https://github.com/Bluscream, https://antigravity.google
 import "./index.css";
-
-import { Devs } from "@utils/constants";
+// region Imports
 import definePlugin from "@utils/types";
 import { findComponentByCodeLazy } from "@webpack";
 import { useState, useRef } from "@webpack/common";
 import ErrorBoundary from "@components/ErrorBoundary";
+import { Logger } from "@utils/Logger";
+// endregion Imports
+
+// region PluginInfo
+export const pluginInfo = {
+    id: "devToolsIcon",
+    name: "DevToolsIcon",
+    description: "Adds a DevTools icon to the top navigation bar for quick access",
+    color: "#7289da",
+    authors: [
+        { name: "Bluscream", id: 467777925790564352n },
+        { name: "Assistant", id: 0n }
+    ],
+};
+// endregion PluginInfo
+
+// region Variables
+const logger = new Logger(pluginInfo.id, pluginInfo.color);
 
 const HeaderBarIcon = findComponentByCodeLazy(
     ".HEADER_BAR_BADGE_TOP:",
     '.iconBadge,"top"'
 );
+// endregion Variables
 
+// region Components
 function DevToolsIcon() {
     return (
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -99,19 +112,13 @@ function DevToolsButton({ buttonClass }: { buttonClass: string }) {
         />
     );
 }
+// endregion Components
 
-import { Logger } from "@utils/Logger";
-
-const logger = new Logger(pluginInfo.name, pluginInfo.color);
-
+// region Definition
 export default definePlugin({
-    name: "DevTools Icon",
-    description:
-        "Adds a DevTools icon next to the inbox icon in the top navigation",
-    authors: [
-        { name: "Bluscream", id: 0n },
-        { name: "Cursor.AI", id: 0n },
-    ],
+    name: pluginInfo.name,
+    description: pluginInfo.description,
+    authors: pluginInfo.authors,
 
     patches: [
         {
@@ -129,3 +136,4 @@ export default definePlugin({
         </ErrorBoundary>
     ),
 });
+// endregion Definition

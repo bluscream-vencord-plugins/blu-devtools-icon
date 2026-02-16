@@ -1,7 +1,7 @@
 {
-    "name": "devtoolsIcon",
+    "name": "devToolsIcon",
     "version": "1.0.0",
-    "description": "DevTools Icon",
+    "description": "Adds a DevTools icon to the top navigation bar for quick access",
     "main": "index.tsx",
     "author": {
         "name": "Bluscream",
@@ -10,7 +10,7 @@
     "license": "GPL-3.0-or-later",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bluscream-vencord-plugins/blu-devtools-icon.git"
+        "url": "https://github.com/bluscream-vencord-plugins/devToolsIcon.git"
     },
     "vencord": {
         "plugin": true,
